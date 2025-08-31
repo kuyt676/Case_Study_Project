@@ -7,7 +7,7 @@ export default function IPInput() {
 
   const handleCheck = () => {
     if (ip) checkIP(ip);
-    setIp(""); // אופציונלי: ריקון השדה אחרי חיפוש
+    setIp(""); 
   };
 
   return (

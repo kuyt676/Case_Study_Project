@@ -1,5 +1,7 @@
+import { IntelResult } from "../types/IntelResult";
+
 interface ResultsProps {
-  data: any; // בהמשך אפשר להגדיר טיפוס מדויק
+  data: IntelResult|null ; 
   loading: boolean;
   error: string | null;
 }

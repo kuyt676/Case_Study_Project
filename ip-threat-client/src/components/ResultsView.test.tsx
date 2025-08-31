@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import ResultsView from "./ResultsView";
+import { IntelResult } from "../types/IntelResult";
 
 describe("ResultsView Component", () => {
-  const mockData = {
+  const mockData:IntelResult = {
     ip: "8.8.8.8",
     hostname: "dns.google",
     isp: "Google LLC",
