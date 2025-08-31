@@ -1,9 +1,9 @@
-# Case Study Project: IP Threat Intelligence
+# Case_Study_Project
 
 This repository contains two main projects:
 
-- **[ip-intel-bff](ip-intel-bff/):** Node.js/Express backend that aggregates IP threat intelligence from external APIs.
-- **[ip-threat-client](ip-threat-client/):** React + TypeScript frontend for querying and displaying IP threat data.
+- **ip-intel-bff**: Node.js/Express backend that aggregates IP threat intelligence from external APIs.
+- **ip-threat-client**: React + TypeScript frontend for querying and displaying IP threat data.
 
 ---
 
@@ -12,21 +12,12 @@ This repository contains two main projects:
 ```
 .
 ├── ip-intel-bff/         # Backend (Node.js/Express)
-│   ├── src/
-│   ├── tests/
-│   ├── .env
-│   ├── package.json
-│   └── ...
-└── ip-threat-client/     # Frontend (React + Vite + Tailwind)
-    ├── src/
-    ├── public/
-    ├── package.json
-    └── ...
+├── ip-threat-client/     # Frontend (React + Vite + Tailwind)
 ```
 
 ---
 
-## Backend: [ip-intel-bff](ip-intel-bff/)
+## 1️⃣ Backend: ip-intel-bff
 
 ### Features
 
@@ -42,8 +33,8 @@ This repository contains two main projects:
    npm install
    ```
 
-2. **Configure environment variables:**
-   - Copy `.env` and set your API keys for AbuseIPDB and IPQualityScore.
+2. **Configure environment variables:**  
+   See [Guidance on API key configuration](#2-guidance-on-api-key-configuration).
 
 3. **Run in development:**
    ```sh
@@ -62,7 +53,32 @@ This repository contains two main projects:
 
 ---
 
-## Frontend: [ip-threat-client](ip-threat-client/)
+## 2️⃣ Guidance on API key configuration
+
+Both backend and frontend may require API keys for external services.
+
+### Backend (`ip-intel-bff`)
+
+1. **Create a `.env` file** in the `ip-intel-bff` directory:
+   ```
+   ABUSEIPDB_API_KEY=your_abuseipdb_api_key
+   IPQUALITYSCORE_API_KEY=your_ipqualityscore_api_key
+   ```
+
+2. **Obtain API keys:**
+   - [AbuseIPDB](https://www.abuseipdb.com/) – Sign up and generate an API key.
+   - [IPQualityScore](https://www.ipqualityscore.com/) – Sign up and generate an API key.
+
+3. **Never commit your `.env` file or API keys to version control.**
+
+### Frontend (`ip-threat-client`)
+
+- By default, the frontend does **not** require API keys if it only communicates with the backend.
+- If you add direct API calls from the frontend, use Vite environment variables (e.g., `.env` files) and never expose sensitive keys in the client code.
+
+---
+
+## 3️⃣ Frontend: ip-threat-client
 
 ### Features
 
